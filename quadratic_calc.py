@@ -1,46 +1,36 @@
-#importing modules (math)
 import math
+#Ask for the three nunmbers (a, b, c)
+a = float(input("What is a: "))
 
-#Asking for the fist number
-number_a = float(input("What is numerb a: "))
+b = float(input("What is b: "))
 
-#Spacing
-print("")
-print("")
-
-#Asking for the second number
-number_b = float(input("What is numerb b: "))
+c = float(input("what is c: "))
 
 #Spacing
 print("")
 print("")
 
-#Asking for the third number
-number_c = float(input("What is numerb c: "))
+#Solve for the part inside the square_root
+d = b ** 2 - (4 * a *c)
 
-#Spacing
-print("")
-print("")
+#If the part inside the square root is more than 0 then add/subtract with -b
+if d > 0:
+    a1 = (-(b) + math.sqrt(d)) / (2 * a)
+    a2 = (-(b) - math.sqrt(d)) / (2 * a)
+    #Print answers
+    print(f"a1: {a1:.3f}")
+    print(f"a2: {a2:.3f}")
+        
 
-#Doing the inside of the square root
-answer_before_square_root = number_b ** 2 - (4 * number_a * number_c)
+#if the part inside the square_root is 0, then add/subtract with -b
+elif d == 0:
+    a1 = (-(b) + d) / (2 * a)
+    a2 = (-(b) - d) / (2 * a)
+    #Print answers
+    print(f"a1: {a1:.3f}")
+    print(f"a2: {a2:.3f}")
 
-#Suare rooting 
-answer_after_square_root = math.sqrt(answer_before_square_root)
+#If the part inside the square root is less than zero, then disaply that there are no root possible
+else:
+    print("No roots for this question!")
 
-#Doing the -b +/- the quare root
-final_answer_adding_before_divide = (-(number_b) + answer_after_square_root) 
-final_answer_substact_before_divide = (-(number_b) - answer_after_square_root) 
-
-#Calculating the 2 different answers
-fianl_answer_add = final_answer_adding_before_divide / (2 * number_a)
-final_answer_subtract = final_answer_substact_before_divide / (2 * number_a)
-
-#Adding answer
-print(f"The fist answer: {fianl_answer_add:.3f}")
-
-#Spacing
-print("")
-
-#Subtracing answer
-print(f"The second answer: {final_answer_subtract:.3f}")
